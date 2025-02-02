@@ -1,4 +1,13 @@
-# Dataset Card: Purple Team Cybersecurity Dataset
+# Purple Team Cybersecurity Dataset
+
+<!-- Hugging Face Metadata -->
+<!-- language: other -->
+<!-- license: mit -->
+<!-- datasets: canstralian/Purple-Team-Cybersecurity-Dataset -->
+
+<!-- Badges -->
+[![Build Status](https://img.shields.io/github/actions/workflow/status/canstralian/Purple-Team-Cybersecurity-Dataset/ci.yml)](https://github.com/canstralian/Purple-Team-Cybersecurity-Dataset/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Dataset Card for Purple Team Cybersecurity Dataset
 
