@@ -1,10 +1,102 @@
-{
-  "Timestamp": "2025-02-03T09:43:06Z",
-  "Source_IP": "192.168.1.10",
-  "Destination_IP": "10.0.0.5",
-  "MITRE_ATT&CK_ID": "T1078",
-  "Tool_Name": "Mimikatz",
-  "Event_Description": "Unauthorized access attempt using stolen credentials.",
-  "Event_Type": "Attack",
-  "MITRE_Tactic": "Credential Access"
-}
+[
+  {
+    "Timestamp": "2025-02-03T10:15:30Z",
+    "Source_IP": "172.16.0.2",
+    "Destination_IP": "192.168.1.100",
+    "MITRE_ATT&CK_ID": "T1059",
+    "Tool_Name": "PowerShell",
+    "Event_Description": "Execution of a PowerShell script to download and execute a malicious payload.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Execution"
+  },
+  {
+    "Timestamp": "2025-02-03T10:20:45Z",
+    "Source_IP": "10.0.0.15",
+    "Destination_IP": "10.0.0.20",
+    "MITRE_ATT&CK_ID": "T1071",
+    "Tool_Name": "Custom C2 Framework",
+    "Event_Description": "Establishment of command and control communication using an encrypted channel.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Command and Control"
+  },
+  {
+    "Timestamp": "2025-02-03T10:25:00Z",
+    "Source_IP": "192.168.1.50",
+    "Destination_IP": "192.168.1.1",
+    "MITRE_ATT&CK_ID": "T1105",
+    "Tool_Name": "FTP Client",
+    "Event_Description": "Unauthorized file transfer from internal server to external IP.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Exfiltration"
+  },
+  {
+    "Timestamp": "2025-02-03T10:30:15Z",
+    "Source_IP": "10.0.0.5",
+    "Destination_IP": "10.0.0.10",
+    "MITRE_ATT&CK_ID": "T1110",
+    "Tool_Name": "Hydra",
+    "Event_Description": "Brute force attack attempting multiple password combinations on SSH service.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Credential Access"
+  },
+  {
+    "Timestamp": "2025-02-03T10:35:30Z",
+    "Source_IP": "192.168.1.20",
+    "Destination_IP": "192.168.1.25",
+    "MITRE_ATT&CK_ID": "T1566",
+    "Tool_Name": "Phishing Email",
+    "Event_Description": "Spear-phishing email sent with malicious attachment to compromise user credentials.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Initial Access"
+  },
+  {
+    "Timestamp": "2025-02-03T10:40:45Z",
+    "Source_IP": "10.0.0.30",
+    "Destination_IP": "10.0.0.35",
+    "MITRE_ATT&CK_ID": "T1078",
+    "Tool_Name": "Stolen Credentials",
+    "Event_Description": "Use of compromised credentials to access restricted system resources.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Credential Access"
+  },
+  {
+    "Timestamp": "2025-02-03T10:45:00Z",
+    "Source_IP": "172.16.0.10",
+    "Destination_IP": "172.16.0.15",
+    "MITRE_ATT&CK_ID": "T1027",
+    "Tool_Name": "Obfuscated Script",
+    "Event_Description": "Execution of an obfuscated script to evade detection mechanisms.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Defense Evasion"
+  },
+  {
+    "Timestamp": "2025-02-03T10:50:15Z",
+    "Source_IP": "192.168.1.30",
+    "Destination_IP": "192.168.1.35",
+    "MITRE_ATT&CK_ID": "T1055",
+    "Tool_Name": "Process Injection",
+    "Event_Description": "Injection of malicious code into a legitimate process to hide execution.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Defense Evasion"
+  },
+  {
+    "Timestamp": "2025-02-03T10:55:30Z",
+    "Source_IP": "10.0.0.40",
+    "Destination_IP": "10.0.0.45",
+    "MITRE_ATT&CK_ID": "T1003",
+    "Tool_Name": "LSASS Dump",
+    "Event_Description": "Dumping of LSASS process memory to extract user credentials.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Credential Access"
+  },
+  {
+    "Timestamp": "2025-02-03T11:00:45Z",
+    "Source_IP": "172.16.0.20",
+    "Destination_IP": "172.16.0.25",
+    "MITRE_ATT&CK_ID": "T1218",
+    "Tool_Name": "Regsvr32",
+    "Event_Description": "Execution of a malicious DLL using Regsvr32 to bypass security controls.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Defense Evasion"
+  }
+]
