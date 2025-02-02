@@ -1,0 +1,10 @@
+{
+  "Timestamp": "2025-02-03T09:43:06Z",
+  "Source_IP": "192.168.1.10",
+  "Destination_IP": "10.0.0.5",
+  "MITRE_ATT&CK_ID": "T1078",
+  "Tool_Name": "Mimikatz",
+  "Event_Description": "Unauthorized access attempt using stolen credentials.",
+  "Event_Type": "Attack",
+  "MITRE_Tactic": "Credential Access"
+}
