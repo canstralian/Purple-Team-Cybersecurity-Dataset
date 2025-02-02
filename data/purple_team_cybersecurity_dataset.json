@@ -100,3 +100,105 @@
     "MITRE_Tactic": "Defense Evasion"
   }
 ]
+[
+  {
+    "Timestamp": "2025-02-03T11:05:00Z",
+    "Source_IP": "192.168.1.40",
+    "Destination_IP": "192.168.1.45",
+    "MITRE_ATT&CK_ID": "T1134",
+    "Tool_Name": "Token Impersonation Tool",
+    "Event_Description": "Impersonation of a token to escalate privileges within the system.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Privilege Escalation"
+  },
+  {
+    "Timestamp": "2025-02-03T11:10:15Z",
+    "Source_IP": "10.0.0.50",
+    "Destination_IP": "10.0.0.55",
+    "MITRE_ATT&CK_ID": "T1203",
+    "Tool_Name": "Exploit Kit",
+    "Event_Description": "Exploitation of a vulnerability in a web browser to execute arbitrary code.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Execution"
+  },
+  {
+    "Timestamp": "2025-02-03T11:15:30Z",
+    "Source_IP": "172.16.0.30",
+    "Destination_IP": "172.16.0.35",
+    "MITRE_ATT&CK_ID": "T1499",
+    "Tool_Name": "DDoS Tool",
+    "Event_Description": "Distributed Denial of Service attack causing disruption of services.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Impact"
+  },
+  {
+    "Timestamp": "2025-02-03T11:20:45Z",
+    "Source_IP": "192.168.1.60",
+    "Destination_IP": "192.168.1.65",
+    "MITRE_ATT&CK_ID": "T1082",
+    "Tool_Name": "System Profiler",
+    "Event_Description": "Discovery of system information to identify potential targets.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Discovery"
+  },
+  {
+    "Timestamp": "2025-02-03T11:25:00Z",
+    "Source_IP": "10.0.0.60",
+    "Destination_IP": "10.0.0.65",
+    "MITRE_ATT&CK_ID": "T1046",
+    "Tool_Name": "Network Scanner",
+    "Event_Description": "Scanning of network to identify active hosts and open ports.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Discovery"
+  },
+  {
+    "Timestamp": "2025-02-03T11:30:15Z",
+    "Source_IP": "172.16.0.40",
+    "Destination_IP": "172.16.0.45",
+    "MITRE_ATT&CK_ID": "T1112",
+    "Tool_Name": "Registry Editor",
+    "Event_Description": "Modification of Windows Registry keys to establish persistence.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Persistence"
+  },
+  {
+    "Timestamp": "2025-02-03T11:35:30Z",
+    "Source_IP": "192.168.1.70",
+    "Destination_IP": "192.168.1.75",
+    "MITRE_ATT&CK_ID": "T1053",
+    "Tool_Name": "Scheduled Task",
+    "Event_Description": "Creation of a scheduled task to execute malicious code at a later time.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Execution"
+  },
+  {
+    "Timestamp": "2025-02-03T11:40:45Z",
+    "Source_IP": "10.0.0.70",
+    "Destination_IP": "10.0.0.75",
+    "MITRE_ATT&CK_ID": "T1070",
+    "Tool_Name": "Log Cleaner",
+    "Event_Description": "Deletion of event logs to cover tracks and avoid detection.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Defense Evasion"
+  },
+  {
+    "Timestamp": "2025-02-03T11:45:00Z",
+    "Source_IP": "172.16.0.50",
+    "Destination_IP": "172.16.0.55",
+    "MITRE_ATT&CK_ID": "T1090",
+    "Tool_Name": "Proxy Tool",
+    "Event_Description": "Use of a proxy to obscure the origin of malicious traffic.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Command and Control"
+  },
+  {
+    "Timestamp": "2025-02-03T11:50:15Z",
+    "Source_IP": "192.168.1.80",
+    "Destination_IP": "192.168.1.85",
+    "MITRE_ATT&CK_ID": "T1486",
+    "Tool_Name": "Ransomware",
+    "Event_Description": "Encryption of files on disk to extort payment from the victim.",
+    "Event_Type": "Attack",
+    "MITRE_Tactic": "Impact"
+  }
+]
