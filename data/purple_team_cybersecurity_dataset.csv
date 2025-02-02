@@ -1,0 +1,3 @@
+Timestamp,Source_IP,Destination_IP,MITRE_ATT&CK_ID,Tool_Name,Event_Description,Event_Type,MITRE_Tactic
+2025-02-03T10:15:30Z,192.168.1.10,10.0.0.5,T1078,Mimikatz,"Unauthorized access attempt using stolen credentials.",Attack,Credential Access
+2025-02-03T10:20:45Z,10.0.0.5,192.168.1.10,D3FEND-D3-DA0001,Sysmon,"Detection of unauthorized access attempt; alert generated.",Defense,Credential Access
