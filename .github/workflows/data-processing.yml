@@ -1,0 +1,37 @@
+name: Data Processing Automation
+
+on:
+  push:
+    paths:
+      - 'data/**'  # Trigger only when data changes
+  schedule:
+    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
+
+jobs:
+  process-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: pip install pandas
+
+    - name: Run Data Processing Script
+      run: python scripts/data_cleaning.py  # Ensure the script is saved in the scripts/ folder
+
+    - name: Commit Processed Data
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add processed_data/
+        git commit -m "Auto-processed data" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
