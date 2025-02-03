@@ -138,3 +138,32 @@ To ensure the integrity of the data and the functionality of the scripts, we hav
 
    ```bash
    pip install -r requirements.txt
+   ```
+
+2. **Run Tests**:
+   Navigate to the root directory of the repository and run the tests:
+
+   ```bash
+   pytest
+   ```
+
+The tests include validation checks for data integrity and functionality of the data processing scripts.
+
+### Example Test File
+Here is an example of a test file located in the `tests/` directory:
+
+```python
+import pandas as pd
+import pytest
+
+def test_no_missing_values():
+    df = pd.read_csv("processed_data/cleaned_dataset.csv")
+    assert df.isnull().sum().sum() == 0, "Dataset contains missing values!"
+
+def test_no_duplicates():
+    df = pd.read_csv("processed_data/cleaned_dataset.csv")
+    assert len(df) == len(df.drop_duplicates()), "Dataset contains duplicate entries!"
+```
+
+### CI/CD Integration
+We have integrated the tests with GitHub Actions to ensure that all processing scripts are tested before merging. You can check the build status on our [GitHub Actions page](https://github.com/canstralian/Purple-Team-Cybersecurity-Dataset/actions).
