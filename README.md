@@ -1,3 +1,10 @@
+---
+license: mit
+language:
+- en
+pretty_name: Purple Team Cybersecurity Dataset
+---
+
 # Purple Team Cybersecurity Dataset
 
 <!-- Hugging Face Metadata -->
@@ -15,48 +22,45 @@
 
 The Purple Team Cybersecurity Dataset is a comprehensive collection of events that amalgamates Red Team (attack) and Blue Team (defense) data. This dataset is designed to facilitate research and development in cybersecurity, particularly in understanding and analyzing the interplay between offensive and defensive strategies. It includes standardized fields such as timestamps, IP addresses, MITRE ATT&CK IDs, tool names, and event descriptions, providing a balanced perspective of both attack and defense scenarios.
 
-Dataset Details
+### Dataset Details
 
-Dataset Description
+**Dataset Description**
 
 This dataset was curated by combining existing Red Team and Blue Team datasets, normalizing and standardizing the data to ensure consistency. Each event is labeled as either “Attack” or “Defense” and is mapped to the corresponding MITRE ATT&CK tactics. The dataset aims to support cybersecurity research by providing a balanced and comprehensive view of both offensive and defensive events.
-   •   Curated by: [Your Name or Organization]
-   •   Funded by [optional]: [More Information Needed]
-   •   Shared by [optional]: [More Information Needed]
-   •   Language(s) (NLP): Not Applicable
-   •   License: [Specify License, e.g., MIT License]
+- Curated by: Canstralian
+- Language(s) (NLP): Not Applicable
+- License: MIT License
 
 Dataset Sources
-   •   Repository: [Link to Dataset Repository]
-   •   Paper [optional]: [Link to Related Paper]
-   •   Demo [optional]: [Link to Demo]
+- Repository: [https://github.com/canstralian/Purple-Team-Cybersecurity-Dataset](https://github.com/canstralian/Purple-Team-Cybersecurity-Dataset)
+- Paper: [More Information Needed (Optional)]
 
 Uses
 
 Direct Use
 
 This dataset is intended for use in cybersecurity research, including but not limited to:
-   •   Analyzing attack and defense patterns
-   •   Developing and testing intrusion detection systems
-   •   Training machine learning models for threat detection
+- Analyzing attack and defense patterns 
+- Developing and testing intrusion detection systems
+- Training machine learning models for threat detection
 
 Out-of-Scope Use
 
 The dataset is not suitable for:
-   •   Real-time threat monitoring in production environments
-   •   Any application involving sensitive or personally identifiable information
+   • Real-time threat monitoring in production environments
+   • Any application involving sensitive or personally identifiable information
 
 Dataset Structure
 
 The dataset comprises events with the following fields:
-   •   Timestamp: ISO 8601 formatted date and time
-   •   Source_IP: Validated source IP address
-   •   Destination_IP: Validated destination IP address
-   •   MITRE_ATT&CK_ID: Standardized MITRE ATT&CK technique ID
-   •   Tool_Name: Standardized name of the tool used
-   •   Event_Description: Detailed description of the event
-   •   Event_Type: Label indicating “Attack” or “Defense”
-   •   MITRE_Tactic: Mapped MITRE ATT&CK tactic
+   • Timestamp: ISO 8601 formatted date and time
+   • Source_IP: Validated source IP address
+   • Destination_IP: Validated destination IP address
+   • MITRE_ATT&CK_ID: Standardized MITRE ATT&CK technique ID
+   • Tool_Name: Standardized name of the tool used
+   • Event_Description: Detailed description of the event
+   • Event_Type: Label indicating “Attack” or “Defense”
+   • MITRE_Tactic: Mapped MITRE ATT&CK tactic
 
 Dataset Creation
 
@@ -107,7 +111,7 @@ APA:
 [More Information Needed]
 
 Glossary
-   •   MITRE ATT&CK: A globally accessible knowledge base of adversary tactics and techniques based on real-world observations.
+   • MITRE ATT&CK: A globally accessible knowledge base of adversary tactics and techniques based on real-world observations.
 
 More Information
 
@@ -115,8 +119,11 @@ More Information
 
 Dataset Card Authors
 
-[Your Name or Organization]
+**Author**: Canstralian
+- **GitHub**: [https://github.com/canstralian](https://github.com/canstralian)
+- **Hugging Face**: [https://huggingface.co/canstralian](https://huggingface.co/canstralian)
 
 Dataset Card Contact
 
-[Your Contact Information]
+**Contact Information**: [Your Contact Information (email or other contact)]
+
