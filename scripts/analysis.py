@@ -1,49 +1,42 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
-import pandas as pd
+from google.cloud import bigquery
+import google.api_core.exceptions
 
-# Plot a heatmap of correlations between features
-def plot_correlation_heatmap(df: pd.DataFrame) -> None:
-    """
-    Plots a heatmap showing the correlations between numeric features in the dataset.
-    
+def analyze_data(project_id, dataset_id, table_id):
+    """Analyzes data in a BigQuery table.
+
+    Connects to BigQuery, queries the specified table for 
+    the number of rows, and prints the result.
+
     Args:
-    - df (pd.DataFrame): The dataset.
-    """
-    correlation_matrix = df.corr()
-    plt.figure(figsize=(10, 8))
-    sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt='.2f', linewidths=0.5)
-    plt.title("Correlation Heatmap")
-    plt.show()
+        project_id: The ID of your Google Cloud project.
+        dataset_id: The ID of the dataset containing the table.
+        table_id: The ID of the table to analyze.
 
-# Plot feature distribution for each numeric feature
-def plot_feature_distributions(df: pd.DataFrame) -> None:
+    Raises:
+        google.api_core.exceptions.BadRequest: If the query is invalid.
+        google.api_core.exceptions.NotFound: If the table is not found.
+        Exception: For any other error during BigQuery interaction.
     """
-    Plots the distribution of each numeric feature in the dataset.
-    
-    Args:
-    - df (pd.DataFrame): The dataset.
-    """
-    numeric_columns = df.select_dtypes(include=[np.number]).columns
-    df[numeric_columns].hist(figsize=(12, 10), bins=30, edgecolor='black')
-    plt.suptitle("Feature Distributions")
-    plt.show()
+    try:
+        client = bigquery.Client(project=project_id)
 
-# Feature importance based on a model (Random Forest example)
-def plot_feature_importance(model, X_train: pd.DataFrame) -> None:
-    """
-    Plots the feature importance based on the trained model.
-    
-    Args:
-    - model: The trained model (Random Forest).
-    - X_train (pd.DataFrame): The training feature data.
-    """
-    feature_importances = model.feature_importances_
-    feature_names = X_train.columns
-    sorted_idx = feature_importances.argsort()
+        query = f"""
+            SELECT COUNT(*) AS num_rows
+            FROM `{project_id}.{dataset_id}.{table_id}`
+        """
 
-    plt.figure(figsize=(10, 6))
-    plt.barh(feature_names[sorted_idx], feature_importances[sorted_idx])
-    plt.title("Feature Importance")
-    plt.xlabel("Importance")
-    plt.show()
+        query_job = client.query(query)
+        results = query_job.result()  # Waits for the query to complete
+
+        for row in results:
+            print(f"Number of rows in table: {row.num_rows}")
+
+    except google.api_core.exceptions.BadRequest as e:
+        print(f"Invalid query: {e}")
+        raise  # Re-raise the exception after printing the error
+    except google.api_core.exceptions.NotFound as e:
+        print(f"Table not found: {e}")
+        raise  # Re-raise the exception after printing the error
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        raise  # Re-raise the exception after printing the error
