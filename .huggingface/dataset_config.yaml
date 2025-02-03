@@ -1,0 +1,68 @@
+import pandas as pd
+import yaml
+from pathlib import Path
+
+# -------------------------------
+# Step 1: Create Sample CSV Files
+# -------------------------------
+
+# Define sample data for the train split
+train_data = {
+    "Timestamp": ["2025-01-01T12:00:00Z", "2025-01-02T13:00:00Z"],
+    "Source_IP": ["192.168.1.1", "10.0.0.2"],
+    "Destination_IP": ["192.168.1.100", "10.0.0.5"],
+    "MITRE_ATT&CK_ID": ["T1003", "T1021"],
+    "Tool_Name": ["ToolA", "ToolB"],
+    "Event_Description": ["Attack event description", "Defense event description"],
+    "Event_Type": ["Attack", "Defense"],
+    "MITRE_Tactic": ["Credential Access", "Defense Evasion"]
+}
+
+# Define sample data for the test split
+test_data = {
+    "Timestamp": ["2025-01-03T14:30:00Z"],
+    "Source_IP": ["172.16.0.3"],
+    "Destination_IP": ["172.16.0.10"],
+    "MITRE_ATT&CK_ID": ["T1059"],
+    "Tool_Name": ["ToolC"],
+    "Event_Description": ["Test event description"],
+    "Event_Type": ["Attack"],
+    "MITRE_Tactic": ["Execution"]
+}
+
+# Create pandas DataFrames for train and test
+train_df = pd.DataFrame(train_data)
+test_df = pd.DataFrame(test_data)
+
+# Save the DataFrames as CSV files in the current directory
+train_csv_path = Path("train.csv")
+test_csv_path = Path("test.csv")
+
+train_df.to_csv(train_csv_path, index=False)
+test_df.to_csv(test_csv_path, index=False)
+
+print(f"Created CSV files: {train_csv_path} and {test_csv_path}")
+
+# ------------------------------------------
+# Step 2: Create a YAML Configuration File
+# ------------------------------------------
+# This YAML file tells the Hub how to treat your CSV files (which split they belong to)
+
+config = {
+    "configs": [
+        {
+            "config_name": "default",
+            "data_files": [
+                {"split": "train", "path": str(train_csv_path)},
+                {"split": "test", "path": str(test_csv_path)}
+            ]
+        }
+    ]
+}
+
+# Write the YAML configuration to a file named 'dataset_config.yaml'
+config_yaml_path = Path("dataset_config.yaml")
+with open(config_yaml_path, "w") as f:
+    yaml.dump(config, f, default_flow_style=False)
+
+print(f"Created YAML configuration file: {config_yaml_path}")
