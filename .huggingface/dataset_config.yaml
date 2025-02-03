@@ -38,10 +38,12 @@ test_df = pd.DataFrame(test_data)
 train_csv_path = Path("train.csv")
 test_csv_path = Path("test.csv")
 
-train_df.to_csv(train_csv_path, index=False)
-test_df.to_csv(test_csv_path, index=False)
-
-print(f"Created CSV files: {train_csv_path} and {test_csv_path}")
+try:
+    train_df.to_csv(train_csv_path, index=False)
+    test_df.to_csv(test_csv_path, index=False)
+    print(f"Created CSV files: {train_csv_path} and {test_csv_path}")
+except Exception as e:
+    print(f"Error creating CSV files: {e}")
 
 # ------------------------------------------
 # Step 2: Create a YAML Configuration File
@@ -62,7 +64,10 @@ config = {
 
 # Write the YAML configuration to a file named 'dataset_config.yaml'
 config_yaml_path = Path("dataset_config.yaml")
-with open(config_yaml_path, "w") as f:
-    yaml.dump(config, f, default_flow_style=False)
 
-print(f"Created YAML configuration file: {config_yaml_path}")
+try:
+    with open(config_yaml_path, "w") as f:
+        yaml.dump(config, f, default_flow_style=False)
+    print(f"Created YAML configuration file: {config_yaml_path}")
+except Exception as e:
+    print(f"Error creating YAML configuration file: {e}")
