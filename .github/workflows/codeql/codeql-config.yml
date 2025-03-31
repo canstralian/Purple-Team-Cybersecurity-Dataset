@@ -1,0 +1,45 @@
+name: "CodeQL Advanced Configuration"
+
+paths:
+  include:
+    - "**/*.py"
+    - "**/*.js"
+  exclude:
+    - "node_modules/"
+    - "venv/"
+    - "build/"
+
+queries:
+  - uses: github/codeql-go/codeql-go-queries@main
+  - uses: github/codeql-javascript/codeql-javascript-queries@main
+  - uses: github/codeql-python/codeql-python-queries@main
+
+libraries:
+  - uses: github/codeql-go/codeql-go-libraries@main
+  - uses: github/codeql-javascript/codeql-javascript-libraries@main
+  - uses: github/codeql-python/codeql-python-libraries@main
+
+seeds:
+  - "**/*.py"
+  - "**/*.js"
+  - "**/*.go"
+
+data-extensions:
+  - python: "**/*.json"
+  - javascript: "**/*.json"
+  - go: "**/*.txt"
+
+specifications:
+  - id: python-security-queries
+    queries:
+      - python/ql/src/Security/CWE-089/SqlInjection.ql
+      - python/ql/src/Security/CWE-079/Xss.ql
+  - id: js-security-queries
+    queries:
+      - javascript/ql/src/Security/CWE-079/Xss.ql
+      - javascript/ql/src/Security/CWE-020/CommandInjection.ql
+
+evaluation:
+  must:
+    - python-security-queries
+    - js-security-queries
